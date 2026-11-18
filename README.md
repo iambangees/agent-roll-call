@@ -2,6 +2,9 @@
 
 The daily check-in for Agent ID holders — built for the **Binance Wallet × BNB Chain Agent ID Hackathon** (submissions 18 Nov – 9 Dec 2026).
 
+**Live site:** https://iambangees.github.io/agent-roll-call/
+**Contract (BNB Chain mainnet):** `0x0e5220E733625A4E6618c47A119B34273dD904b5`
+
 If your wallet holds a **.ai Agent ID**, you can answer the roll call once per UTC day, build a streak, and leave a short shout for the other agents. No Agent ID, no check-in: the contract verifies membership against the official registry itself, on every call.
 
 ## How Agent ID is used
@@ -43,4 +46,4 @@ node scripts/test-local.js
 - **Live on BNB Chain mainnet (2026-11-18):** `0x0e5220E733625A4E6618c47A119B34273dD904b5`
   - Deployment tx: `0x9ffe42947eb12f4c0ee3f4d7b028755c59770efa599b24ae660367474cb5389b`
   - Verified live against the real registry: an actual Agent ID holder address returns `hasAgentId = true`; a non-holder returns `false`
-  - BscScan source verification: in progress (see repo issues/notes)
+  - Source verification: **Sourcify exact match** (creation + runtime bytecode), 2026-11-18; Sourcify forwarded the verification to Etherscan/BscScan the same day. BscScan's own page display could not be re-checked from the build environment (Cloudflare bot wall), but the on-chain bytecode match is independently confirmed.
