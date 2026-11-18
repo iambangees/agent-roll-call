@@ -1,0 +1,10 @@
+{
+  "network": "mainnet",
+  "chainId": 56,
+  "deployer": "0x9642186b21143833e477e94aBDEC80b44730934f",
+  "registry": "0x60B9262456dE011F7d15a54CdD8c48bAaa8B022F",
+  "mockRegistry": null,
+  "agentRollCall": "0x0e5220E733625A4E6618c47A119B34273dD904b5",
+  "deployTx": "0x9ffe42947eb12f4c0ee3f4d7b028755c59770efa599b24ae660367474cb5389b",
+  "at": "2026-11-18T12:39:51.676Z"
+}

@@ -1,0 +1,10 @@
+{
+  "network": "testnet",
+  "chainId": 97,
+  "deployer": "0x9642186b21143833e477e94aBDEC80b44730934f",
+  "registry": "0x0e5220E733625A4E6618c47A119B34273dD904b5",
+  "mockRegistry": "0x0e5220E733625A4E6618c47A119B34273dD904b5",
+  "agentRollCall": "0x04771510432F91D5684Cd22CAFBA7e51D9c8a773",
+  "deployTx": "0xc0126af7251de4483ea1365180e0efbf36a6f37c68a1bbfd5f3d6c1d480922de",
+  "at": "2026-11-18T12:38:36.463Z"
+}

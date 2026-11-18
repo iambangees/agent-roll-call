@@ -1,0 +1,68 @@
+{
+  "contractName": "MockAgentId",
+  "sourceFile": "MockAgentId.sol",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "owner",
+          "type": "address"
+        }
+      ],
+      "name": "balanceOf",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "to",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        }
+      ],
+      "name": "giveAgentId",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "owner",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "index",
+          "type": "uint256"
+        }
+      ],
+      "name": "tokenOfOwnerByIndex",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": "6080604052348015600e575f80fd5b506101dc8061001c5f395ff3fe608060405234801561000f575f80fd5b506004361061003f575f3560e01c80632f745c591461004357806370a0823114610068578063b3e94bcc14610090575b5f80fd5b61005661005136600461015e565b6100c7565b60405190815260200160405180910390f35b610056610076366004610186565b6001600160a01b03165f9081526020819052604090205490565b6100c561009e36600461015e565b6001600160a01b039091165f90815260208181526040808320600190819055909152902055565b005b5f811580156100ec57506001600160a01b0383165f9081526020819052604090205415155b6101275760405162461bcd60e51b81526020600482015260086024820152672737903a37b5b2b760c11b604482015260640160405180910390fd5b50506001600160a01b03165f9081526001602052604090205490565b80356001600160a01b0381168114610159575f80fd5b919050565b5f806040838503121561016f575f80fd5b61017883610143565b946020939093013593505050565b5f60208284031215610196575f80fd5b61019f82610143565b939250505056fea2646970667358221220191bb9d684897163e0b9f2699877d7d56730785c4ec152945142d827722ecd6864736f6c634300081a0033"
+}
