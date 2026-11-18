@@ -49,7 +49,7 @@
   <div class="card">
     <div id="notConnected">
       <button id="btnConnect">Connect wallet</button>
-      <div class="msg muted">Open this page inside your wallet's browser and connect. Works with any wallet on BNB Chain — check-ins themselves need an Agent ID.</div>
+      <div class="msg muted">This button only works inside a wallet browser. If you are reading this in Chrome or another normal browser, use the guide in "How to check in" below — it takes about a minute and needs no agent, no code, and no extra app.</div>
     </div>
     <div id="connected" style="display:none">
       <div class="addr" id="myAddr"></div>
@@ -58,6 +58,22 @@
       <button id="btnCheckIn">Check in for today</button>
       <div class="msg" id="txMsg"></div>
     </div>
+  </div>
+
+  <div class="card">
+    <h3 style="margin:4px 0 8px">How to check in — no agent needed</h3>
+    <p style="margin:6px 0; line-height:1.55">Your check-in has to come from the wallet that holds your Agent ID, and for Agentic Wallet users that wallet lives in the <b>Binance App</b>. A normal phone browser cannot reach it — that is the whole trick:</p>
+    <ol style="margin:6px 0; line-height:1.6; padding-left:20px">
+      <li>Copy this page's link: <button class="ghost" id="btnCopy" style="width:auto; padding:4px 10px; font-size:13px">Copy link</button></li>
+      <li>Open the <b>Binance App</b> and tap <b>Wallet</b> at the bottom.</li>
+      <li>Make sure your <b>Agentic Wallet</b> (the one with your .ai Agent ID) is the active wallet.</li>
+      <li>Open the wallet's built-in browser — the browser/compass icon, or the search bar at the top of the Wallet page — and paste the link.</li>
+      <li>On this page, tap <b>Connect wallet</b>, then <b>Check in for today</b>, and confirm in the app. Gas is a fraction of a cent of BNB.</li>
+    </ol>
+    <p class="muted" style="margin:6px 0; line-height:1.55">Run your wallet through an AI agent instead? Hand your agent this: contract <span class="addr">0x0e5220E733625A4E6618c47A119B34273dD904b5</span> on BNB Chain, function <span class="addr">checkIn(string)</span>, value 0. Or generate the exact call data here:</p>
+    <input type="text" id="agentShout" maxlength="140" placeholder="Your shout (optional)">
+    <button class="ghost" id="btnCalldata">Generate call data for my agent</button>
+    <div class="msg addr" id="calldataOut" style="word-break:break-all"></div>
   </div>
 
   <div class="card">
@@ -155,8 +171,18 @@ async function refreshMine() {
   }
 }
 
+$("btnCopy").onclick = async () => {
+  try { await navigator.clipboard.writeText(location.href); $("btnCopy").textContent = "Copied ✓"; }
+  catch (e) { $("btnCopy").textContent = location.href; }
+};
+
+$("btnCalldata").onclick = () => {
+  const iface = new ethers.Interface(ABI);
+  $("calldataOut").textContent = iface.encodeFunctionData("checkIn", [$("agentShout").value.trim()]);
+};
+
 $("btnConnect").onclick = async () => {
-  if (!window.ethereum) { alert("No wallet found. Open this page inside your wallet app's browser."); return; }
+  if (!window.ethereum) { alert("No wallet found here. This is a normal browser — follow the 'How to check in' guide below and open this page inside the Binance App's wallet browser instead."); return; }
   const provider = new ethers.BrowserProvider(window.ethereum);
   const network = await provider.getNetwork();
   if (network.chainId !== BSC_CHAIN_ID) {
