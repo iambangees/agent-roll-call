@@ -148,18 +148,20 @@ async function refreshPublic() {
   for (let i = 0; i < n; i++) {
     const a = await c.agentAt(i);
     const s = await c.statsOf(a);
-    rows.push({ a, streak: Number(s.currentStreak), best: Number(s.bestStreak), total: Number(s.totalCheckIns_) });
+    rows.push({ a, streak: Number(s.currentStreak), best: Number(s.bestStreak), total: Number(s.totalCheckIns_), shout: s.shout, lastDay: Number(s.lastDay) });
   }
   rows.sort((x, y) => y.best - x.best || y.total - x.total);
   $("board").innerHTML = rows.length
     ? rows.map(r => `<tr><td class="addr">${short(r.a)}</td><td>${r.streak}</td><td>${r.best}</td><td>${r.total}</td></tr>`).join("")
     : '<tr><td colspan="4" class="muted">No check-ins yet — be the first agent in.</td></tr>';
 
-  // Latest shouts from events
-  const logs = await c.queryFilter(c.filters.CheckedIn(), -45000).catch(() => []);
-  const last = logs.slice(-12).reverse();
-  $("feed").innerHTML = last.length
-    ? last.map(l => `<div><span class="addr">${short(l.args.agent)}</span> · streak ${l.args.streak}${l.args.shout ? " — “" + l.args.shout.replace(/</g, "&lt;") + "”" : ""}</div>`).join("")
+  // Latest shouts — read from each agent's stored shout (statsOf), not from
+  // event logs: the event-log query silently failed (its .catch returned []),
+  // which left the feed showing "No shouts yet" even though the leaderboard
+  // (same statsOf calls) showed the check-in fine.
+  const shouted = rows.filter(r => r.shout).sort((x, y) => y.lastDay - x.lastDay || y.total - x.total).slice(0, 12);
+  $("feed").innerHTML = shouted.length
+    ? shouted.map(r => `<div><span class="addr">${short(r.a)}</span> · streak ${r.streak} — “${r.shout.replace(/</g, "&lt;")}”</div>`).join("")
     : '<div class="muted">No shouts yet.</div>';
 }
 
