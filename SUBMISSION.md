@@ -1,11 +1,26 @@
 # Hackathon submission pack — Agent Roll Call
 
 Prepared 2026-11-18. Everything below is ready to paste into the official
-submission form as soon as the submission channel is confirmed (the public
-announcement does not link a project-submission form; the only survey linked
-is for the X promotion campaign).
+submission form.
 
-## Submission channel — status checked 2026-11-18 ~15:30 WAT
+## Submission channel — FOUND 2026-11-22
+
+**Official project submission form (Binance survey, login required):**
+https://www.binance.com/en/survey/fb26d2bd25e04329b1ba77c7b3811d23
+- It is the "Submit Project Now" destination from the official announcement
+  (the Binance Square version of the announcement carries the button; the
+  support-page text extraction dropped it, which is why earlier checks
+  missed it). The form itself references the announcement URL and the
+  2026-12-09 08:00 UTC deadline. Abubakar checked the Binance App's Agentic
+  Wallet tab on 2026-11-22 — nothing there; this web survey is the channel.
+- The form's header states as "Project eligibility": product live + **at
+  least 30 Agent ID addresses** interacted during the Submission Period
+  (in the announcement that gate is written under the Innovation Award;
+  the Pioneer/Interaction section states no minimum — submit either way).
+- Like the community-promo survey, it is tied to his Binance account, so
+  Abubakar submits it himself. Status: NOT YET SUBMITTED as of 2026-11-22.
+
+## Submission channel — earlier status (2026-11-18, superseded)
 
 - Re-read the full Binance announcement
   (https://www.binance.com/en/support/announcement/detail/95f5dbe0ea674a48a739b59e046648bf):
