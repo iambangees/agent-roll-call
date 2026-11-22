@@ -43,6 +43,7 @@ https://www.binance.com/en/survey/fb26d2bd25e04329b1ba77c7b3811d23
 - **Contract address (BNB Chain mainnet):** 0x0e5220E733625A4E6618c47A119B34273dD904b5
 - **Contract verification:** Sourcify exact match (creation + runtime), forwarded to BscScan/Etherscan 2026-11-18
 - **Reward receiving address:** 0x1D299177871e716dE80D58887A560bcb80260424 (Agentic Wallet, bangees.ai)
+- **Demo video (field 12, ~65s, real live-site captures with real on-chain data):** https://raw.githubusercontent.com/iambangees/agent-roll-call/main/site/demo.mp4 (file also at `site/demo.mp4` in the repo; a Pages mirror at iambangees.github.io/agent-roll-call/demo.mp4 was still pending push on 2026-11-22 due to the flaky proxy)
 
 ## Agent ID usage description (for the form)
 
